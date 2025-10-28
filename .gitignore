@@ -23,6 +23,7 @@ frontend/.env
 frontend/.next/
 frontend/.cache/
 frontend/dist/
+frontend/src/components
 
 # Logs
 *.log
