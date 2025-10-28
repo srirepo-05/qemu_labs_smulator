@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+.env
+.venv
+env/
+venv/
+*.sqlite3
+*.db
+
+# VS Code
+.vscode/
+
+# Node/React
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.next/
+frontend/.cache/
+frontend/dist/
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+Icon?
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+docker-compose.override.yml
+
+# Images/VM overlays
+images/*.qcow2
+overlays/*.qcow2
+
+# Misc
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+

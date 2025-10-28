@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: guac-postgres
+    environment:
+      POSTGRES_DB: guacamole_db
+      POSTGRES_USER: guacamole_user
+      POSTGRES_PASSWORD: guacamole_password
+    volumes:
+      - guac-db-data:/var/lib/postgresql/data
+    restart: always
+
+  guacd:
+    image: guacamole/guacd:latest
+    container_name: guacd
+    ports:
+      - "4822:4822"
+    depends_on:
+      - postgres
+    restart: always
+
+  guacamole:
+    image: guacamole/guacamole:latest
+    container_name: guacamole
+    ports:
+      - "8080:8080"
+    links:
+      - guacd
+    environment:
+      GUACD_HOSTNAME: guacd
+      GUACD_PORT: 4822
+      POSTGRESQL_HOSTNAME: postgres
+      POSTGRESQL_PORT: 5432
+      POSTGRESQL_DATABASE: guacamole_db
+      POSTGRESQL_USERNAME: guacamole_user
+      POSTGRESQL_PASSWORD: guacamole_password
+    depends_on:
+      - guacd
+      - postgres
+    restart: always
+
+volumes:
+  guac-db-data:

@@ -1,0 +1,171 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.node-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.node-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.node-item:last-child {
+  border-bottom: none;
+}
+
+.node-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.node-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.node-name a {
+  color: #007bff;
+  text-decoration: none;
+}
+.node-name a:hover {
+  text-decoration: underline;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-RUNNING {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-STOPPED {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.node-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-run {
+  background: #28a745;
+  color: white;
+}
+.btn-run:hover {
+  background: #218838;
+}
+.btn-run:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.btn-stop {
+  background: #dc3545;
+  color: white;
+}
+.btn-stop:hover {
+  background: #c82333;
+}
+.btn-stop:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.btn-wipe {
+  background: #ffc107;
+  color: #333;
+}
+.btn-wipe:hover {
+  background: #e0a800;
+}
+.btn-wipe:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.btn-console {
+  background: #17a2b8;
+  color: white;
+  text-decoration: none; /* For the <a> tag */
+}
+.btn-console:hover {
+  background: #138496;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: white;
+}
+.btn-delete:hover {
+  background: #c82333;
+}
+
+/* Update the existing :disabled rule to also catch our new .disabled class */
+.btn:disabled,
+.btn.disabled {
+  background: #aaa;
+  color: #eee;
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none; /* This is key for <a> tags */
+}
